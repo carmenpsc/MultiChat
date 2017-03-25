@@ -69,6 +69,10 @@ angular.module('multichatApp')
                             drawingManagement.addObject(obj.data.type, obj.data.info);
                         else if (obj.data.operation == 'clearAll')
                             drawingManagement.clearObjects();
+                        else if (obj.data.operation == 'removeShape')
+                            drawingManagement.removeShape();
+                        else if (obj.data.operation == 'createImage')
+                            drawingManagement.createImage();
                         break;
                     case "presentation":
                         presentationManagement.updateSlide(obj.data);

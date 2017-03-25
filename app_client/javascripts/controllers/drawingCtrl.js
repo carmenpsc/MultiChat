@@ -24,7 +24,13 @@ angular.module('multichatApp')
         $scope.getSelection = function(){
             webSocketManager.drawingManagement.getSelection();
         };
-        $scope.clearAll = function(){
+        $scope.clearAll = function() {
             webSocketManager.drawingManagement.clearAll();
+        };
+        $scope.removeShapeData = function(){
+            webSocketManager.drawingManagement.removeShapeData();
+        };
+        $scope.createImageData = function(){
+            webSocketManager.drawingManagement.createImageData();
         };
     });

@@ -58,12 +58,12 @@ function DrawingManagement(ws) {
                 {x: 138.5, y: 150.5},
                 {x: 151.5, y: 107.5},
                 {x: 115.5, y: 80.5},
-                {x: 160.5, y: 80.5},
+                {x: 160.5, y: 80.5}
             ],
             more: {
                 fill: 'yellow',
                 left: 100,
-                top: 100,
+                top: 100
             }
         };
         sendData('Star', obj, 'add');
@@ -97,8 +97,21 @@ function DrawingManagement(ws) {
         }
         canvas.add(shape);
     };
+    this.removeShapeData = function (type, info) {
+        sendData('', '', 'removeShape');
+    };
+    this.removeShape = function (type, info) {
+        canvas.remove(canvas.getActiveObject());
+    };
     this.clearObjects = function(type, info) {
         canvas.clear();
+    };
+    this.createImageData = function (type,info) {
+        sendData('','','createImage');
+    };
+    this.createImage = function (type, info) {
+        var image = canvas.toDataURL('png');
+        window.open(image);
     };
 
     function sendData(type, info, operation) {

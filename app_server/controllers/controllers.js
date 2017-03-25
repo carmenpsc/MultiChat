@@ -216,6 +216,8 @@ module.exports.multichat = function(req, res, next) {
             addTriangle: 'Add Triangle',
             addEllipse: 'Add Ellipse',
             addStar: 'Add Star',
+            removeShape: 'Remove selection',
+            createImage: 'Create .png',
             pencil: 'Pencil',
             selectAudio: 'Select audio',
             selectVideo: 'Select video',
