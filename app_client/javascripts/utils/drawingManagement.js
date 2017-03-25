@@ -43,7 +43,8 @@ function DrawingManagement(ws) {
         canvas.isDrawingMode = false;
     };
     this.clearAll = function(type, info) {
-        sendData('', '', 'clearAll');
+        canvas.remove(getSelection());
+        //sendData('', '', 'clearAll');
     };
     this.addObject = function(type, info) {
         var shape;
@@ -61,6 +62,7 @@ function DrawingManagement(ws) {
     this.clearObjects = function(type, info) {
         canvas.clear();
     };
+
     function sendData(type, info, operation) {
         ws.send(JSON.stringify({
             'section': 'drawings',
