@@ -36,6 +36,16 @@ function DrawingManagement(ws) {
         };
         sendData('Triangle', obj, 'add');
     };
+    this.addEllipse = function () {
+        var obj = {
+            rx: 20,
+            ry: 30,
+            fill: 'yellow',
+            left: 200,
+            top: 200
+        };
+        sendData('Ellipse', obj, 'add');
+    }
     this.getPencil = function() {
         canvas.isDrawingMode = true;
     };
@@ -55,6 +65,9 @@ function DrawingManagement(ws) {
         }
         else if(type == 'Circle') {
             shape = new fabric.Circle(info);
+        }
+        else if(type == 'Ellipse') {
+            shape = new fabric.Ellipse(info);
         }
         canvas.add(shape);
     };
