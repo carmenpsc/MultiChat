@@ -40,12 +40,35 @@ function DrawingManagement(ws) {
         var obj = {
             rx: 20,
             ry: 30,
-            fill: 'yellow',
+            fill: 'brown',
             left: 200,
             top: 200
         };
         sendData('Ellipse', obj, 'add');
-    }
+    };
+    this.addStar = function () {
+        var obj = {
+            coor: [
+                {x: 175, y: 37.5},
+                {x: 189.5, y: 80.5},
+                {x: 234.5, y: 80.5},
+                {x: 198.5, y: 107.5},
+                {x: 211.5, y: 150.5},
+                {x: 175, y: 125},
+                {x: 138.5, y: 150.5},
+                {x: 151.5, y: 107.5},
+                {x: 115.5, y: 80.5},
+                {x: 160.5, y: 80.5},
+            ],
+            more: {
+                fill: 'yellow',
+                left: 100,
+                top: 100,
+            }
+        };
+        sendData('Star', obj, 'add');
+    };
+
     this.getPencil = function() {
         canvas.isDrawingMode = true;
     };
@@ -68,6 +91,9 @@ function DrawingManagement(ws) {
         }
         else if(type == 'Ellipse') {
             shape = new fabric.Ellipse(info);
+        }
+        else if(type == 'Star') {
+            shape = new fabric.Polygon(info.coor, info.more);
         }
         canvas.add(shape);
     };

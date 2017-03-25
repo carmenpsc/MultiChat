@@ -12,6 +12,9 @@ angular.module('multichatApp')
         $scope.addTriangle = function(){
             webSocketManager.drawingManagement.addTriangle();
         };
+        $scope.addStar = function(){
+            webSocketManager.drawingManagement.addStar();
+        };
         $scope.addEllipse = function(){
             webSocketManager.drawingManagement.addEllipse();
         };
