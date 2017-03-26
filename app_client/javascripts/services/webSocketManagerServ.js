@@ -15,7 +15,7 @@ angular.module('multichatApp')
         var videoManagement = new VideoManagement(ws, growl);
         var audioManagement = new AudioManagement(ws, growl);
         var videoconferenceManagement = new VideoconferenceManagement(ws, growl);
-        var drawingManagement = new DrawingManagement(ws);
+        var drawingManagement = new DrawingManagement(ws, growl);
         var presentationManagement = new PresentationManagement(ws, growl);
 
         ws.onOpen(function() {

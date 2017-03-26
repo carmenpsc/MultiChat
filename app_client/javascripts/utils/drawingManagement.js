@@ -1,7 +1,7 @@
 /**
  * Created by Carmen-Uni on 21/03/2017.
  */
-function DrawingManagement(ws) {
+function DrawingManagement(ws, growl) {
     var canvas = new fabric.Canvas('canvas');
     canvas.setHeight(350);
     canvas.setWidth(350);
@@ -101,7 +101,13 @@ function DrawingManagement(ws) {
         sendData('', '', 'removeShape');
     };
     this.removeShape = function (type, info) {
-        canvas.remove(canvas.getActiveObject());
+        if(canvas.getActiveObject() != null)
+            canvas.remove(canvas.getActiveObject());
+        else{
+            growl.error('Select one shape',{
+                title: 'Error'
+            });
+        }
     };
     this.clearObjects = function(type, info) {
         canvas.clear();
@@ -110,8 +116,15 @@ function DrawingManagement(ws) {
         sendData('','','createImage');
     };
     this.createImage = function (type, info) {
-        var image = canvas.toDataURL('png');
-        window.open(image);
+        if(canvas.isEmpty()){
+            growl.error('Put some shapes',{
+                title: 'Error'
+            });
+        }
+        else {
+            var image = canvas.toDataURL('png');
+            window.open(image);
+        }
     };
 
     function sendData(type, info, operation) {
