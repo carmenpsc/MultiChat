@@ -25,6 +25,18 @@ angular.module('multichatApp')
         var car = /:-C/g;
         var city = /:-L/g;
         var koala = /:-K/g;
+        var burguer = /F1/g;
+        var chips = /F2/g;
+        var cookies = /F3/g;
+        var donuts = /F4/g;
+        var watermelon = /F5/g;
+        var sweet = /F6/g;
+        var pizza = /F7/g;
+        var lorry = /T2/g;
+        var plane = /T3/g;
+        var train = /T5/g;
+        var statue = /T1/g;
+        var whale = /T4/g;
         return function(input) {
             var output = input.replace(space, '&nbsp;');
             output = output.replace(line, '<br>');
@@ -68,6 +80,30 @@ angular.module('multichatApp')
                 '<img src="images/emojis/orte-15.png" width="20px" height="20px">');
             output = output.replace(koala,
                 '<img src="images/emojis/natur-09.png" width="20px" height="20px">');
+            output = output.replace(burguer,
+                '<img src="images/emojis/food-1.png" width="20px" height="20px">');
+            output = output.replace(chips,
+                '<img src="images/emojis/food-2.png" width="20px" height="20px">');
+            output = output.replace(cookies,
+                '<img src="images/emojis/food-3.png" width="20px" height="20px">');
+            output = output.replace(donuts,
+                '<img src="images/emojis/food-4.png" width="20px" height="20px">');
+            output = output.replace(watermelon,
+                '<img src="images/emojis/food-5.png" width="20px" height="20px">');
+            output = output.replace(sweet,
+                '<img src="images/emojis/food-6.png" width="20px" height="20px">');
+            output = output.replace(pizza,
+                '<img src="images/emojis/food-7.png" width="20px" height="20px">');
+            output = output.replace(statue,
+                '<img src="images/emojis/trips-1.png" width="20px" height="20px">');
+            output = output.replace(lorry,
+                '<img src="images/emojis/trips-2.png" width="20px" height="20px">');
+            output = output.replace(plane,
+                '<img src="images/emojis/trips-3.png" width="20px" height="20px">');
+            output = output.replace(whale,
+                '<img src="images/emojis/trips-4.png" width="20px" height="20px">');
+            output = output.replace(train,
+                '<img src="images/emojis/trips-5.png" width="20px" height="20px">');
             return $sce.trustAsHtml(output);
         };
     });

@@ -20,7 +20,10 @@ var layoutMultichat = {
     presentations: 'Presentations',
     audio: 'Audio broadcast',
     video: 'Video broadcast',
-    videoconferences: 'Videoconferences'
+    videoconferences: 'Videoconferences',
+    smiles: 'Smiles',
+    food: 'Food',
+    trips: 'Trips'
 };
 
 module.exports.about = function(req, res, next) {

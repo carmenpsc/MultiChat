@@ -83,11 +83,11 @@ ul#listGroupMessages {
 .fa-white {
     color: white;
 }
-#emojisArea {
-    background-image: url("../images/nacre-background-tile.jpg");
+#emojisArea .panel.panel-info{
     background-repeat: repeat;
     position:absolute;
     bottom: 0px;
+    margin-bottom: 0;
     text-align: center;
 }
 #uploadPictureDropzone {
