@@ -8,7 +8,8 @@ var User = mongoose.model('User');
 require('../config/passport.js');
 
 module.exports.register = function(req, res) {
-    if(!req.body.userName || !req.body.name || !req.body.password) {
+    if(!req.body.userName || !req.body.name || !req.body.password || !req.body.surnames || !req.body.email
+    || !req.body.telephone) {
         utils.sendJSONresponse(res, 400, {
             "message": "All fields required"
         });
@@ -17,6 +18,9 @@ module.exports.register = function(req, res) {
     var user = new User();
     user.userName = req.body.userName;
     user.name = req.body.name;
+    user.surnames = req.body.surnames;
+    user.email = req.body.email;
+    user.telephone = req.body.telephone;
     user.setPassword(req.body.password);
     user.save(function(err) {
         var token;
@@ -65,6 +69,12 @@ module.exports.profile = function(req, res) {
             console.log(user._id);
             if (req.body.name != user.name)
                 user.name = req.body.name;
+            if (req.body.surnames != user.surnames)
+                user.surnames = req.body.surnames;
+            if (req.body.email != user.email)
+                user.email = req.body.email;
+            if (req.body.telephone != user.telephone)
+                user.telephone = req.body.telephone;
             if (req.body.password)
                 user.setPassword(req.body.password);
             User.update({userName: req.body.userName}, user, function(err) {

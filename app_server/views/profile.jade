@@ -28,6 +28,46 @@ block content-common
                         "|| form.name.$error.maxlength") #{lang.fieldSizeCheck}
                         .glyphicon.glyphicon-warning-sign.form-control-feedback(
                         ng-show="form.name.$error.minlength || form.name.$error.maxlength")
+            .form-group(ng-class='((form.surnames.$touched || form.$submitted) ' +
+            '&& form.surnames.$invalid) ? "has-error has-feedback" : "has-feedback"')
+                label.control-label.col-sm-2(for='surnames') #{lang.surnames}:
+                .col-sm-3
+                    input.form-control(type='text' id='surnames' name='surnames'
+                    ng-init='profile.surnames="#{sub.surnames}"' ng-model="profile.surnames"
+                    ng-minlength='3' ng-maxlength='20')
+                    div(ng-show="form.surnames.$valid")
+                        .glyphicon.glyphicon-ok.form-control-feedback
+                    div(ng-show="form.$submitted || form.surnames.$touched")
+                        .text-danger(ng-show="form.surnames.$error.minlength " +
+                        "|| form.surnames.$error.maxlength") #{lang.fieldSizeCheck}
+                        .glyphicon.glyphicon-warning-sign.form-control-feedback(
+                        ng-show="form.surnames.$error.minlength || form.surnames.$error.maxlength")
+            .form-group(ng-class='((form.email.$touched || form.$submitted) ' +
+            '&& form.email.$invalid) ? "has-error has-feedback" : "has-feedback"')
+                label.control-label.col-sm-2(for='email') #{lang.email}:
+                .col-sm-3
+                    input.form-control(type='email' id='email' name='email'
+                    ng-init='profile.email="#{sub.email}"' ng-model="profile.email")
+                    div(ng-show="form.email.$valid")
+                        .glyphicon.glyphicon-ok.form-control-feedback
+                    div(ng-show="form.email.$error.email")
+                        .text-danger(ng-show="form.email.$error.email") #{lang.emailValid}
+                        .glyphicon.glyphicon-ok.form-control-feedback
+            .form-group(ng-class='((form.telephone.$touched || form.$submitted) ' +
+            '&& form.telephone.$invalid) ? "has-error has-feedback" : "has-feedback"')
+                label.control-label.col-sm-2(for='telephone') #{lang.telephone}:
+                .col-sm-3
+                    input.form-control(type='text' id='telephone' name='telephone'
+                    ng-init='profile.telephone="#{sub.telephone}"' ng-model="profile.telephone"
+                    ng-minlength='9' ng-maxlength='9' ng-pattern='/^[0-9]*$/')
+                    div(ng-show="form.telephone.$valid")
+                        .glyphicon.glyphicon-ok.form-control-feedback
+                    div(ng-show="form.$submitted || form.telephone.$touched")
+                        .text-danger(ng-show="form.telephone.$error.minlength " +
+                        "|| form.telephone.$error.maxlength || form.telephone.$error.pattern") #{lang.fieldSizeCheckTelephone}
+                        .glyphicon.glyphicon-warning-sign.form-control-feedback(
+                        ng-show="form.telephone.$error.minlength || form.telephone.$error.maxlength " +
+                        "|| for.telephone.$error.pattern")
 
             .form-group(ng-class='((form.pwd.$touched || form.$submitted) ' +
             '&& form.pwd.$invalid) ? "has-error has-feedback" : "has-feedback"')
