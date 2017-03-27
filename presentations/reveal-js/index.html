@@ -4,31 +4,29 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Presentación ampliaciones Mutlichat</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="En esta presentación se darán a conocer las ampliacones realizadas para la aplicación de Multichat.">
+		<meta name="author" content="Carmen Peñalver San Cristóblal">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
 
-		<!-- For syntax highlighting -->
+		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<!-- Printing and PDF exports -->
 		<script>
-			if( window.location.search.match( /print-pdf/gi ) ) {
-				var link = document.createElement( 'link' );
-				link.rel = 'stylesheet';
-				link.type = 'text/css';
-				link.href = 'css/print/pdf.css';
-				document.getElementsByTagName( 'head' )[0].appendChild( link );
-			}
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 
 		<!--[if lt IE 9]>
@@ -43,314 +41,469 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
+                    <img class="sinborde derecha" data-src="img/bocadillo1.png" alt="Bocadillo de habla">
+					<h1>Multichat</h1>
+					<h4>Descripción de las ampliaciones realizadas</h4>
 					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
+						<small>Creado por <span class="fragment highlight-red">Carmen Peñalver San Cristóbal</span></small>
 					</p>
 				</section>
 
-				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#" class="navigate-down">down</a>.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides and pinch your way to the overview.
-					</p>
-				</section>
-
-				<section>
-					<h2>Marvelous Unordered List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
+				<section id="fragments">
+					<h2>Índice</h2>
 					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
+                        <li class="fragment"><a href="#/2">Autenticación de usuarios</a></li>
+                        <li class="fragment"><a href="#/3">Dibujo colaborativo</a></li>
+                        <li class="fragment"><a href="#/7">Mensajes entre usuarios</a></li>
 					</ol>
 				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  For those of you who like that sort of thing.
-						  Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=cube#/transitions">Cube</a> -
-						<a href="?transition=page#/transitions">Page</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a> -
-						<a href="?transition=linear#/transitions">Linear</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?#/transitions">Default</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						Reveal.js comes with a few themes built in: <br>
-						<a href="?#/themes">Default</a> -
-						<a href="?theme=sky#/themes">Sky</a> -
-						<a href="?theme=beige#/themes">Beige</a> -
-						<a href="?theme=simple#/themes">Simple</a> -
-						<a href="?theme=serif#/themes">Serif</a> -
-						<a href="?theme=night#/themes">Night</a> <br>
-						<a href="?theme=moon#/themes">Moon</a> -
-						<a href="?theme=solarized#/themes">Solarized</a>
-					</p>
-					<p>
-						<small>
-							* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
-						</small>
-					</p>
-				</section>
-
+                
+                <section>
+                    <section>
+                        <h2>Autenticación de usuarios</h2>
+                        <p>A lo largo de estas diapositivas, se explican todos los pasos seguidos para gestionar más datos de cada uno de los usuarios.</p>
+                        <ol>
+                            <li class="fragment fade-down">Apellidos</li>
+                            <li class="fragment fade-down">Correo electrónico</li>
+                            <li class="fragment fade-down">Telefono</li>
+                        </ol>
+                        <p>
+                            <a href="#" class="navigate-down enabled">
+                                <img class="sinborde" src="img/flecha.png" alt="flecha abajo" width="50" height="50">
+                            </a>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Primer paso</h2>
+                        <p>En primer lugar, se añadirán estos nuevos datos al modelo y a la sesión.</p>
+                        <pre><code class="hljs" data-trim>
+                            var userSchema = new mongoose.Schema({
+                                userName: {
+                                    type: String,
+                                    unique: true,
+                                    required: true
+                                },
+                                name: {
+                                    type: String,
+                                    required: true
+                                },
+                                surnames:{
+                                    type: String,
+                                    required: true
+                                },
+                                email:{
+                                    type: String,
+                                    required: true
+                                },
+                                telephone:{
+                                    type: String,
+                                    required: true
+                                },
+                                hash: String,
+                                salt: String
+                            });
+                            /* Se añaden a la sesión */
+                            userSchema.methods.generateJwt = function() {
+                                var payload = {
+                                    sub: {
+                                        _id: this._id,
+                                        userName: this.userName,
+                                        name: this.name,
+                                        surnames: this.surnames,
+                                        email: this.email,
+                                        telephone: this.telephone
+                                    },
+                                    iat: moment().unix(),
+                                    exp: moment().add(14, "days").unix()
+                                };
+                                return jwt.encode(payload, process.env.JWT_SECRET);
+                            };
+                       </code></pre>
+                    </section>
+                    <section>
+                        <h3>Segundo paso</h3>
+                        <p>El siguiente paso es añadir los nuevos datos al fichero <strong>userCtrl.js</strong> para poder añadirlos a la base de datos cuando un usuario se registre.</p>
+                        <pre><code class="hljs" data-trim>
+                            module.exports.register = function(req, res) {
+                                if(!req.body.userName || !req.body.name || !req.body.password || !req.body.surnames || !req.body.email
+                                || !req.body.telephone) {
+                                    utils.sendJSONresponse(res, 400, {
+                                        "message": "All fields required"
+                                    });
+                                    return;
+                                }
+                                var user = new User();
+                                user.userName = req.body.userName;
+                                user.name = req.body.name;
+                                user.surnames = req.body.surnames;
+                                user.email = req.body.email;
+                                user.telephone = req.body.telephone;
+                                user.setPassword(req.body.password);
+                                user.save(function(err) {
+                                    var token;
+                                    if (err) {
+                                        utils.sendJSONresponse(res, 500, err);
+                                    } else {
+                                        token = user.generateJwt();
+                                        utils.sendJSONresponse(res, 200, {
+                                            "token" : token
+                                        });
+                                    }
+                                });
+                            };
+                       </code></pre>
+                    </section>    
+                    <section>
+                        <h2>Tercer paso</h2>
+                        <p>En la vista <strong>register.jade</strong>, se añaden los nuevos campos para añadir los nuevos datos en el registro con sus correspondientes validaciones.</p>
+                        <img height="280" data-src="img/register.PNG" alt="Nuevas figuras">
+                        <p><small>Se han añadido las etiquetas y los mensajes de error al fichero <strong>controllers.js</strong></small></p>
+                    </section>
+                    <section>
+                        <h2>Cuarto paso</h2>
+                        <p>En la vista <strong>profile.jade</strong>, se añaden los nuevos campos para poder ser modificados por el usuario con sus correspondientes validaciones, al igual que en el registro.
+                        </p>
+                        <p>Por defecto, salen los campos rellenos, gracias a que los datos están en sesión.</p>
+                    </section>
+                    <section>
+                        <h2>Extra</h2>
+                        <p>Se modifican los ficheros necesarios para que en la lista de usuarios conectados aparezca el apellido junto al nombre.</p>
+                        <ul>
+                            <li class="fragment highlight-red">peopleCtrl.js</li>
+                            <li class="fragment highlight-red">peopleManagement.js</li>
+                            <li class="fragment highlight-red">websockets.js</li>
+                            <li class="fragment highlight-red">multichat.jade</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Resultado final</h2>
+                        <img data-src="img/usuarioapellidos.PNG" alt="Usuario con apellidos">
+                    </section>
+                </section>
+                
 				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the background.
-					</p>
+					<h2>Dibujo colaborativo</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Ampliación</th>
+								<th>Título</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>I</td>
+								<td>Crear más tipos de objetos</td>
+							</tr>
+							<tr>
+								<td>II</td>
+								<td>Permitir borrar elementos individuales de la superficie de dibujo</td>
+							</tr>
+							<tr>
+								<td>III</td>
+								<td>Permitir exportar los dibujos en formato gráfico</td>
+							</tr>
+						</tbody>
+					</table>
 				</section>
-
-				<section data-state="customevent">
-					<h2>Custom Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<section data-background="#007777">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#007777"</code> on a slide to change the full page background to the given color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Repeated Image Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-				</section>
-
-				<section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-					<h2>Background Transitions</h2>
-					<p>
-						Pass reveal.js the <code>backgroundTransition: 'slide'</code> config argument to make backgrounds slide rather than fade.
-					</p>
-				</section>
-
-				<section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
-					<h2>Background Transition Override</h2>
-					<p>
-						You can override background transitions per slide by using <code>data-background-transition="slide"</code>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragmented Views</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<ol>
-							<li class="fragment"><code>any type</code></li>
-							<li class="fragment"><em>of view</em></li>
-							<li class="fragment"><strong>fragments</strong></li>
-						</ol>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
+                
+                <section>
+					<section>
+						<h2>Ampliación I</h2>
+						<p>A continuación, se van a mostrar todos los pasos realizados para implementar la creación de nuevos tipos de objetos.</p>
+                        <ul>
+                            <li class="fragment grow">Elipse</li>
+                            <li class="fragment grow">Estrella</li>
+                        </ul>
+                        <p>
+                            <a href="#" class="navigate-down enabled">
+                                <img class="sinborde" src="img/flecha.png" alt="flecha abajo" width="50" height="50">
+                            </a>
+                        </p>
 					</section>
 					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's a few styles of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-green">highlight-green</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-current-blue">highlight-current-blue</p>
+                        <h2>Primer paso</h2>
+                        <p>En el archivo <strong>drawingManagement.js</strong> se añaden dos nuevos métodos para añadir elipses y estrellas.</p>
+                        <pre><code class="hljs" data-trim>
+                            this.addEllipse = function () {
+                                    var obj = {
+                                        rx: 20,
+                                        ry: 30,
+                                        fill: 'brown',
+                                        left: 200,
+                                        top: 200
+                                    };
+                                    sendData('Ellipse', obj, 'add');
+                                };
+                            this.addStar = function () {
+                                var obj = {
+                                    coor: [
+                                        {x: 175, y: 37.5},
+                                        {x: 189.5, y: 80.5},
+                                        {x: 234.5, y: 80.5},
+                                        {x: 198.5, y: 107.5},
+                                        {x: 211.5, y: 150.5},
+                                        {x: 175, y: 125},
+                                        {x: 138.5, y: 150.5},
+                                        {x: 151.5, y: 107.5},
+                                        {x: 115.5, y: 80.5},
+                                        {x: 160.5, y: 80.5}
+                                    ],
+                                    more: {
+                                        fill: 'yellow',
+                                        left: 100,
+                                        top: 100
+                                    }
+                                };
+                                sendData('Star', obj, 'add');
+                            };
+					   </code></pre>
+					</section>
+					<section>
+						<h2>Segundo paso</h2>
+						<p>Se añaden al método <strong>addObject</strong> del fichero <strong>drawingManagement.js</strong> las sentencias condicionales necesarias para poder crear estas nuevas figuras.</p>
+				        <pre><code class="hljs" data-trim>
+                            else if(type == 'Ellipse') {
+                                shape = new fabric.Ellipse(info);
+                            }
+                            else if(type == 'Star') {
+                                shape = new fabric.Polygon(info.coor, info.more);
+                            }
+					   </code></pre>
+					</section>      
+                    <section>
+						<h2>Tercer paso</h2>
+						<p>En el archivo <strong>drawingCtrl.js</strong> se añaden los dos nuevos eventos que permiten añadir elipses y estrellas según el botón accionado.</p>
+				        <pre><code class="hljs" data-trim>
+                            $scope.addEllipse = function(){
+                                webSocketManager.drawingManagement.addEllipse();
+                            };
+                            $scope.addStar = function(){
+                                webSocketManager.drawingManagement.addStar();
+                            };
+					   </code></pre>
+					</section>
+                    <section>
+						<h2>Cuarto paso</h2>
+						<p>En la vista <strong>multichat.jade</strong> se añaden los dos nuevos botones con sus etiquetas correspondientes (config.js).</p>
+				        <pre><code class="hljs" data-trim>
+                            button.btn.btn-default(ng-click='addStar()') #{lang.addStar}
+                            button.btn.btn-default(ng-click='addEllipse()') #¡{lang.addEllipse}
+					   </code></pre>
+					</section>
+                    <section>
+						<h2>Resultado final</h2>
+						<img data-src="img/a1.PNG" alt="Nuevas figuras">
 					</section>
 				</section>
-
-				<!--<section> REMOVED TO AVOID PROBLEMS WITH IFRAMES
-					<h2>Spectacular image!</h2>
-					<a class="image" href="http://lab.hakim.se/meny/" target="_blank">
-						<img width="320" height="299" src="http://s3.amazonaws.com/hakim-static/portfolio/images/meny.png" alt="Meny">
-					</a>
-				</section>-->
-
-				<!--<section> REMOVED TO AVOID PROBLEMS WITH IFRAMES
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, below is an example that's been uploaded to SlideShare.</p>
-					<iframe id="slideshare" src="http://www.slideshare.net/slideshow/embed_code/13872948" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
-					<script>
-						document.getElementById('slideshare').attributeName = 'allowfullscreen';
-					</script>
-				</section>-->
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press b or period on your keyboard to enter the 'paused' mode. This mode is helpful when you want to take distracting slides off the screen
-						during a presentation.
-					</p>
+                
+                <section>
+					<section>
+						<h2>Ampliación II</h2>
+						<p>A continuación, se van a mostrar todos los pasos realizados para implementar la opción de borrar elementos individuales.</p>
+                        <p>
+                            <a href="#" class="navigate-down enabled">
+                                <img class="sinborde" src="img/flecha.png" alt="flecha abajo" width="50" height="50">
+                            </a>
+                        </p>
+					</section>
+					<section>
+                        <h2>Primer paso</h2>
+                        <p>En el archivo <strong>drawingManagement.js</strong> se añaden dos nuevos métodos: el que borra el elemento y el que envía la información para borrar dicho elemento.</p>
+                        <pre><code class="hljs" data-trim>
+                            this.removeShapeData = function (type, info) {
+                                sendData('', '', 'removeShape');
+                            };
+                            this.removeShape = function (type, info) {
+                                if(canvas.getActiveObject() != null)
+                                    canvas.remove(canvas.getActiveObject());
+                                else{
+                                    growl.error('Select one shape',{
+                                        title: 'Error'
+                                    });
+                                }
+                            };
+					   </code></pre>
+					</section>    
+                    <section>
+						<h2>Segundo paso</h2>
+						<p>En el archivo <strong>drawingCtrl.js</strong> se añade el nuevo evento que permiten borrar figuras.</p>
+				        <pre><code class="hljs" data-trim>
+                            $scope.removeShapeData = function(){
+                               webSocketManager.drawingManagement.removeShapeData();
+                            };
+					   </code></pre>
+					</section>
+                    <section>
+						<h2>Tercer paso</h2>
+						<p>En la vista <strong>multichat.jade</strong> se añade el nuevo botón con su etiqueta correspondiente (config.js).</p>
+				        <pre><code class="hljs" data-trim>
+                            button.btn.btn-default(ng-click='removeShapeData()') #{lang.removeShape}
+					   </code></pre>
+					</section>
+                    <section>
+						<h2>Resultado final</h2>
+						<img height="300" width="200" data-src="img/a2.PNG" alt="Down arrow">
+                        <p>Se añade el parametro <span class="fragment grow">growl</span> al fichero <strong>drawingManagement.js</strong> para que admita errores. </p>
+					</section>
 				</section>
-
-				<section>
-					<h2>Stellar Links</h2>
-					<ul>
-						<li><a href="http://slid.es">Try the online editor</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js">Source code on GitHub</a></li>
-						<li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
-					</ul>
-				</section>
-
-				<section>
-					<h1>THE END</h1>
-					<h3>BY Hakim El Hattab / hakim.se</h3>
+                
+                <section>
+                    <section>
+                        <h2>Ampliación III</h2>
+                        <p>A continuación, se van a mostrar todos los pasos realizados para implementar la opción de crear una imagen .png del canvas.</p>
+                        <p>
+                            <a href="#" class="navigate-down enabled">
+                                <img class="sinborde" src="img/flecha.png" alt="flecha abajo" width="50" height="50">
+                            </a>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Primer paso</h2>
+                        <p>En el archivo <strong>drawingManagement.js</strong> se añaden dos nuevos métodos: el que crea la imagen y el que envía la información para crear la imagen.</p>
+                        <pre><code class="hljs" data-trim>
+                            this.createImageData = function (type,info) {
+                                sendData('','','createImage');
+                            };
+                            this.createImage = function (type, info) {
+                                if(canvas.isEmpty()){
+                                    growl.error('Put some shapes',{
+                                        title: 'Error'
+                                    });
+                                }
+                                else {
+                                    var image = canvas.toDataURL('png');
+                                    window.open(image);
+                                }
+                            };
+                       </code></pre>
+                    </section>    
+                    <section>
+                        <h2>Segundo paso</h2>
+                        <p>En el archivo <strong>drawingCtrl.js</strong> se añade el nuevo evento que permiten crear la imagen del canvas.</p>
+                        <pre><code class="hljs" data-trim>
+                            $scope.createImageData = function(){
+                                webSocketManager.drawingManagement.createImageData();
+                            };
+                       </code></pre>
+                    </section>
+                    <section>
+                        <h2>Tercer paso</h2>
+                        <p>En la vista <strong>multichat.jade</strong> se añade el nuevo botón con su etiqueta correspondiente (config.js).</p>
+                        <pre><code class="hljs" data-trim>
+                            button.btn.btn-default(ng-click='createImageData()') #{lang.createImage}
+					   </code></pre>
+                    </section>
+                    <section>
+                        <h2>Resultado final</h2>
+                        <img data-src="img/a3.png" alt="Imagen creada">
+                        <p>Se añade el parametro <span class="fragment grow">growl</span> al fichero <strong>drawingManagement.js</strong> para que admita errores. </p>
+                    </section>
+                </section>
+                
+                <section>
+                    <section>
+                        <h2>Mensajes entre usuarios</h2>
+                        <p>Para esta sección, se ha realizado la ampliación que permite dividir, en varias categorías, los iconos que se pueden enviar a otros usuarios.</p>
+                        <img class="fragment fade-up" data-src="img/icono.png" alt="Icono">
+                        <p>
+                            <a href="#" class="navigate-down enabled">
+                                <img class="sinborde" src="img/flecha.png" alt="flecha abajo" width="50" height="50">
+                            </a>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Primer paso</h2>
+                        <p>En primer lugar, será necesario añadir en el directorio <strong>app_client>images>emojis</strong> los nuevos iconos asociados a las nuevas categorías.</p>
+                        <img data-src="img/dirimagenes.PNG" alt="Directorio emojis">
+                    </section>
+                    <section>
+                        <h3>Segundo paso</h3>
+                        <p>En la vista <strong>multichat.jade</strong> se añade, en el área de emojis en el bloque message, un panel con distintas pestañas.</p>
+                        <pre><code class="hljs" data-trim>
+                            #emojisArea(ng-show="showEmojis")
+                                .panel.panel-info
+                                    .panel-heading
+                                        ul.nav.nav-tabs.nav-justified
+                                            li.active
+                                                a(href='#Smiles' data-toggle='tab') #{layoutMultichat.smiles}
+                                            li
+                                                a(href='#Food' data-toggle='tab') #{layoutMultichat.food}
+                                            li
+                                                a(href='#Trips' data-toggle='tab') #{layoutMultichat.trips}
+                                    .panel-body
+                                        .tab-content
+                                            .tab-pane.fade.in.active#Smiles
+                                                /* DENTRO LOS BOTONES CON CARITAS */
+                                            .tab-pane.fade#Food
+                                                /* DENTRO LOS BOTONES CON COMIDA */
+                                            .tab-pane.fade#Trips
+                                                /* DENTRO LOS BOTONES CON VIAJES */
+                       </code></pre>
+                    </section>    
+                    <section>
+                        <h2>Tercer paso</h2>
+                        <p>En el archivo <strong>emojisFilter.js</strong> se añaden los textos asociado a cada uno de los nuevos iconos para cargar cada imagen correspondiente.</p>
+                        <pre><code class="hljs" data-trim>
+                            var burguer = /F1/g;
+                            var chips = /F2/g;
+                            var cookies = /F3/g;
+                            var donuts = /F4/g;
+                            var watermelon = /F5/g;
+                            var sweet = /F6/g;
+                            var pizza = /F7/g;
+                            var lorry = /T2/g;
+                            var plane = /T3/g;
+                            var train = /T5/g;
+                            var statue = /T1/g;
+                            var whale = /T4/g;
+                            output = output.replace(burguer,
+                                '<img src="images/emojis/food-1.png" width="20px" height="20px">');
+                            output = output.replace(chips,
+                                '<img src="images/emojis/food-2.png" width="20px" height="20px">');
+                            output = output.replace(cookies,
+                                '<img src="images/emojis/food-3.png" width="20px" height="20px">');
+                            output = output.replace(donuts,
+                                '<img src="images/emojis/food-4.png" width="20px" height="20px">');
+                            output = output.replace(watermelon,
+                                '<img src="images/emojis/food-5.png" width="20px" height="20px">');
+                            output = output.replace(sweet,
+                                '<img src="images/emojis/food-6.png" width="20px" height="20px">');
+                            output = output.replace(pizza,
+                                '<img src="images/emojis/food-7.png" width="20px" height="20px">');
+                            output = output.replace(statue,
+                                '<img src="images/emojis/trips-1.png" width="20px" height="20px">');
+                            output = output.replace(lorry,
+                                '<img src="images/emojis/trips-2.png" width="20px" height="20px">');
+                            output = output.replace(plane,
+                                '<img src="images/emojis/trips-3.png" width="20px" height="20px">');
+                            output = output.replace(whale,
+                                '<img src="images/emojis/trips-4.png" width="20px" height="20px">');
+                            output = output.replace(train,
+                                '<img src="images/emojis/trips-5.png" width="20px" height="20px">');
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Resultado final I</h2>
+                        <img data-src="img/iconoscategoria1.png" alt="Categoría de caritas">
+                    </section>
+                    <section>
+                        <h2>Resultado final II</h2>
+                        <img data-src="img/iconoscategoria2.png" alt="Categoría de comidas">
+                    </section>
+                    <section>
+                        <h2>Resultado final II</h2>
+                        <img data-src="img/iconoscategoria3.png" alt="Categoría de viajes">
+                    </section>
+                </section>
+                <section data-background="img/aplausos.gif" data-background-repeat="repeat" data-background-size="100px">
+                    <div style="
+                               background: #E5D6D3;">
+                        <h2>¡Muchas gracias por su atención!</h2>
+                        <p>
+                           Para conocer la web y poder probar todas las ampliaciones <a href="https://peaceful-crag-85519.herokuapp.com/multichat">pinche aquí</a>
+                        </p>
+                    </div>
 				</section>
 
 			</div>
@@ -358,33 +511,27 @@ function linkify( selector ) {
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
+		<script src="js/reveal.js"></script>
 
 		<script>
 
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
+			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				controls: true,
 				progress: true,
 				history: true,
 				center: true,
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
 
-				// Parallax scrolling
-				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-				// parallaxBackgroundSize: '2100px 900px',
-
-				// Optional libraries used to extend on reveal.js
+				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
 				]
 			});
 
