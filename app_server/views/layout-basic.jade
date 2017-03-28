@@ -12,7 +12,8 @@ head
     link(rel='stylesheet', href='/angular-material/angular-material.min.css')
     link(rel='stylesheet', href='/dropzone/dist/dropzone.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
-body
+
+body(onload="startVideo(manifest.mpd")
     block content-basic
     div(growl)
     script(src='/jquery/dist/jquery.min.js')
@@ -33,6 +34,7 @@ body
     script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAoI6-7hOkiI9cGgoY0Bxxc_puXrxTSBMA')
     script(src='/config.js')
 
+    script(src='/javascripts/utils/adaptativoManagement.js')
     script(src='/javascripts/utils/videoconferenceManagement.js')
     script(src='/javascripts/controllers/videoconferenceCtrl.js')
     script(src='/javascripts/utils/messagesManagement.js')

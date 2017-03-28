@@ -142,6 +142,9 @@ block audio
         'showAudioModal("#{lang.modal.selectAudio}","#{lang.modal.url}", "#{lang.modal.accept}", "#{lang.modal.cancel}")') #{lang.selectAudio}
         audio#audioId(controls width='100%' height='100%')
             source#audioSource(src='#{config.audioUrl}')
+block video
+        video#adaptativoId(controls width="100%" height="100%")
+            source
 
 block videoconference
     div(ng-controller='videoconferenceCtrl')

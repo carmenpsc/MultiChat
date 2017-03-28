@@ -21,12 +21,16 @@ block content-common
                                     a(href='#video' data-toggle='tab') #{layoutMultichat.video}
                                 li
                                     a(href='#audio' data-toggle='tab') #{layoutMultichat.audio}
+                                li
+                                    a(href='#adaptativo' data-toggle='tab') #{layoutMultichat.adaptativo}
                         .panel-body
                             .tab-content
                                 .tab-pane.fade.in.active#video
                                     block video
                                 .tab-pane.fade#audio
                                     block audio
+                                .tab-pane.fade#adaptativo
+                                    block adaptativo
                 .col-md-6
                     .panel.panel-info
                         .panel-heading #{layoutMultichat.videoconferences}

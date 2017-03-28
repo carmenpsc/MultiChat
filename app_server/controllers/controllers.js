@@ -23,7 +23,8 @@ var layoutMultichat = {
     videoconferences: 'Videoconferences',
     smiles: 'Smiles',
     food: 'Food',
-    trips: 'Trips'
+    trips: 'Trips',
+    adaptativo: 'Stream adaptativo'
 };
 
 module.exports.about = function(req, res, next) {
